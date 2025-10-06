@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Center the entire content horizontally */
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Apply background strip above the topmost row */
+        .top-strip {
+            background-color: #008081;
+            height: 25px;
+            width: 100%; /* Span the entire width */
+        }
+
+        /* Apply background image to the first row */
+        tr.first-row {
+            background-image: url('images/head-back.jpg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Center the background image vertically */
+        }
+
+        /* Style the first row header */
+        tr.first-row td {
+            text-align: center;
+            padding: 30px 0; /* Increase vertical padding for header */
+            color: #fff; /* Text color */
+            font-size: 35px; /* Header size */
+            font-weight: bold; /* Bold text */
+            background-color: transparent; /* Remove background color */
+        }
+
+        /* Style the links in the second row */
+        tr.second-row {
+            background-color: #008081; /* Darker background color */
+        }
+
+        tr.second-row a {
+            text-decoration: none;
+            color: #dedede; /* Link color */
+            font-weight: bold; /* Bold text */
+            padding: 10px 20px; /* Add padding to space out the links */
+            display: inline-block; /* Center the links horizontally */
+        }
+
+        /* Style the Servers dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #008081;
+            color: #dedede;
+            border: none;
+            cursor: pointer;
+            font-weight: bold; /* Bold text */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #008081;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #dedede;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold; /* Bold text */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #dedede;
+            color: #008081; /* Hovered link color */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style the content row */
+        tr.content-row {
+            background-color: #dedede;
+        }
+        
+        /* Remove border between rows */
+        table {
+            border-collapse: collapse;
+            width: 100%; /* Span the entire width */
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Strip -->
+    <div class="top-strip"></div>
+
+    <table>
+        <tbody>
+            <!-- First Row with Background Image -->
+            <tr class="first-row">
+                <td colspan="6">Automated LAN-Party</td>
+            </tr>
+            <!-- Second Row with Links -->
+            <tr class="second-row">
+                <td colspan="6">
+                    <a href="index.html">HOME</a> |
+                    <a href="calendar.html">CALENDAR</a> |
+                    <a href="tournaments.html">TOURNAMENTS & CHALLENGES</a> |
+                    <a href="chat.html">CHAT</a> |
+                    <a href="downloads.php">DOWNLOADS</a> |
+                    <div class="dropdown">
+                        <span class="dropbtn">SERVERS &#x25BC;</span>
+                        <div class="dropdown-content">
+                            <a href="servers.html">VIRTUAL MACHINES</a>
+                            <a href="non_steam_servers.html">NON-STEAM SERVERS</a>
+                            <a href="steam_servers.html">STEAM SERVERS</a>
+                            <a href="server_browser.html">SERVER BROWSER</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="content-row">
+                <td colspan="6"><br><table border="0"><tbody><tr><td width="*"> </td><td width="1000" style="text-align: left;">
+            <!-- Third Row for Content -->	
+<center>To remove a server from the startup list, simply run C:\Servers\Edit Batch Launchers.py and uncheck the servers you don't want auto-launching with windows.<br>
+ This will add a "REM" line in front of that game's launcher in the launch servers batch files so it skips those lines.<br>
+ <img src="images/server_launcher_config.PNG"></center>
+<table style="width: 100%;">
+    <tr>
+        <td>
+<h1>To add a new Steam-based server to the list:</h1>
+Firstly, browse to the SteamCMD folder and make a copy of cs_ds.txt to edit it's contents and rename it your new game _ds.txt eg: newgame_ds.txt<br>
+Then edit the newly renamed file to have the <a href="https://steamdb.info/apps/" target="_blank">correct steam APP ID</a> for the game server you're building.<br>
+Make sure to give it a directory. Do not include spaces in the directory name or it may error. C:\new_game works fine.<br>
+<img src="images/cs_ds.PNG"><br>
+Now we must make the desktop shortcuts and readme and config file shortcuts in a folder under C:\Servers\ so it can be found easy, that folder has a shortcut in the quick launch bar and desktop. You can right click on this new folder and under properties, cutomize give it a nice icon to match the game's.<br>
+Copy the CS: GO folder from the C:\Servers page and re-name it to your game name. Also re-name the files within it for clarity. We'll give it a new folder icon soon.<br>
+Next Edit the "update server settings" shortcut to point to the newgame_ds.txt file you made earlier in the steamCMD folder.
+Also edit the arguments within the Update new game server<br>
+<img src="images/update_shortcut.PNG"><br>
+Now run your newly created update shortcut to start downloading the game itself from the internet.<br>
+Once it's finished you can point the "New Game Server" shortcut at the newly downloaded server on C:\<br>
+Now we can make the server folder containing our new shortcuts look like it should by right clicking on the folder itself, properties, customize. Then selecting the newly downloaded game on c:\ to locate a proper icon.<br>
+<br><img src="images/customize_folder.PNG"><br>
+<br>Now we have to make the game launch with windows:<br>
+Then you copy a batch file within C:\Games\Batch_Files such as "update_csgo.bat" and re-name it "update_newgame.bat" and edit it, changing it to launch the newly created update shortcut you added to the c:\servers directory, changing it's echo'd callouts from refrencing CSGO to whatever your new game is<br>
+<img src="images/update_newgame_bat.PNG"><br>
+Now we will clone launch_csgo.bat and do the same thing, but change the .exe it looks for so it doesn't launch the service twice to the .exe your game server is called in task manager when running. And the .lnk shortcut to the one we updated in the c:\servers\new game folder that launches the game server<br>
+<br>
+Then finally add a call line to C:\Servers\Launch_all_servers.bat<br>
+<br>
+<img src="images/launch_steam_servers_bat.PNG"><br>
+<br>
+Now you can either launch the server from the servers folder you created under c:\Servers, or let it auto-launch from the batch file!<br>
+<br>
+        </td>
+        <td width="250">
+			<img src="images/Copy_CS_folder.PNG" width="250"><br>
+			<br>
+			<img src="images/steam_servers_folder.PNG" width="250"><br>
+			<br>
+			<img src="images/update_server_shortcut.png" width="250"><br>
+        </td>
+    </tr>
+</table>
+
+				</td><td width="*"> </td></tr></tbody></table><br></td>
+            </tr>
+        </tbody>
+    </table>
+
+	    <div class="top-strip"></div>
+</body>
+</html>

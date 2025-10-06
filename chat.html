@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Center the entire content horizontally */
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Apply background strip above the topmost row */
+        .top-strip {
+            background-color: #008081;
+            height: 25px;
+            width: 100%; /* Span the entire width */
+        }
+
+        /* Apply background image to the first row */
+        tr.first-row {
+            background-image: url('images/head-back.jpg');
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Center the background image vertically */
+        }
+
+        /* Style the first row header */
+        tr.first-row td {
+            text-align: center;
+            padding: 30px 0; /* Increase vertical padding for header */
+            color: #fff; /* Text color */
+            font-size: 35px; /* Header size */
+            font-weight: bold; /* Bold text */
+            background-color: transparent; /* Remove background color */
+        }
+
+        /* Style the links in the second row */
+        tr.second-row {
+            background-color: #008081; /* Darker background color */
+        }
+
+        tr.second-row a {
+            text-decoration: none;
+            color: #dedede; /* Link color */
+            font-weight: bold; /* Bold text */
+            padding: 10px 20px; /* Add padding to space out the links */
+            display: inline-block; /* Center the links horizontally */
+        }
+
+        /* Style the Servers dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #008081;
+            color: #dedede;
+            border: none;
+            cursor: pointer;
+            font-weight: bold; /* Bold text */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #008081;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #dedede;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold; /* Bold text */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #dedede;
+            color: #008081; /* Hovered link color */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style the content row */
+        tr.content-row {
+            background-color: #dedede;
+        }
+        
+        /* Remove border between rows */
+        table {
+            border-collapse: collapse;
+            width: 100%; /* Span the entire width */
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Strip -->
+    <div class="top-strip"></div>
+
+    <table>
+        <tbody>
+            <!-- First Row with Background Image -->
+            <tr class="first-row">
+                <td colspan="6">Automated LAN-Party</td>
+            </tr>
+            <!-- Second Row with Links -->
+            <tr class="second-row">
+                <td colspan="6">
+                    <a href="index.html">HOME</a> |
+                    <a href="calendar.html">CALENDAR</a> |
+                    <a href="tournaments.html">TOURNAMENTS & CHALLENGES</a> |
+                    <a href="chat.html">CHAT</a> |
+                    <a href="downloads.php">DOWNLOADS</a> |
+                    <div class="dropdown">
+                        <span class="dropbtn">SERVERS &#x25BC;</span>
+                        <div class="dropdown-content">
+                            <a href="servers.html">VIRTUAL MACHINES</a>
+                            <a href="non_steam_servers.html">NON-STEAM SERVERS</a>
+                            <a href="steam_servers.html">STEAM SERVERS</a>
+                            <a href="server_browser.html">SERVER BROWSER</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="content-row">
+                <td colspan="6"><br>
+            <!-- Third Row for Content -->				
+	
+<h1>Chat</h1>		
+The chat page within ALP contains a self-creating link for teamspeak, but also a discord link for you to change: <br>
+<br>
+<h4>Discord link:</h4>
+Edit this shortcode to customize the discord link on the admin portion of the intranet site:
+<br>Code snippit> All snippits> Discord clickable image
+<br>Replace the https://discord.gg/ URL with your own invite URL and hit update on the top right.
+<br>
+<h4>Forum</h4>
+The bottom of the Chat page is a web-forum that people at the LAN can use to discuss games, hardware, or sign up for raffle prizes.<br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BmtFh-pb7F8?si=ZSVyrtBASwKZw8Gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<br></td>
+            </tr>
+        </tbody>
+    </table>
+
+	    <div class="top-strip"></div>
+</body>
+</html>
