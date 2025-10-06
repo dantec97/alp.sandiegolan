@@ -1,65 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Automated LAN Party</title>
     <link rel="stylesheet" href="./styles/index.css">
-  
 </head>
 <body>
-    <!-- Top Strip -->
-    <div class="top-strip"></div>
-
-    <table>
-        <tbody>
-            <!-- First Row with Background Image -->
-            <tr class="first-row">
-                <td colspan="6">Automated LAN-Party</td>
-            </tr>
-            <!-- Second Row with Links -->
-            <tr class="second-row">
-                <td colspan="6">
-                    <a href="index.html">HOME</a> |
-                    <a href="calendar.html">CALENDAR</a> |
-                    <a href="tournaments.html">TOURNAMENTS & CHALLENGES</a> |
-                    <a href="chat.html">CHAT</a> |
-                    <a href="downloads.php">DOWNLOADS</a> |
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">ALP</div>
+            <nav>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="calendar.html">Calendar</a>
+                    <a href="tournaments.html">Tournaments</a>
+                    <a href="chat.html">Chat</a>
+                    <a href="downloads.php">Downloads</a>
                     <div class="dropdown">
-                        <span class="dropbtn">SERVERS &#x25BC;</span>
+                        <span class="dropbtn">Servers &#x25BC;</span>
                         <div class="dropdown-content">
-                            <a href="servers.html">VIRTUAL MACHINES</a>
-                            <a href="non_steam_servers.html">NON-STEAM SERVERS</a>
-                            <a href="steam_servers.html">STEAM SERVERS</a>
-                            <a href="server_browser.html">SERVER BROWSER</a>
+                            <a href="servers.html">Virtual Machines</a>
+                            <a href="non_steam_servers.html">Non-Steam Servers</a>
+                            <a href="steam_servers.html">Steam Servers</a>
+                            <a href="server_browser.html">Server Browser</a>
                         </div>
                     </div>
-                </td>
-            </tr>
-            <tr class="content-row">
-                <td colspan="6"><br><table border="0"><tbody><tr><td width="*"> </td><td width="1000" style="text-align: left;">
-            <!-- Third Row for Content -->	
- <h1><center>Welcome to Automated LAN party!</h1>
-  Your one-stop virtualized server for legacy LAN game hosting.
- <br>
-<h2>What is Automated LAN party?</h2>
- ALP was originally created as <a href="https://www.nerdclub.net/alp/" target"_blank">autonomous LAN party</a> however it was decided that the old software which ran on deprecated PHP and mySQL was too far gone to resurrect.
- <br>This version of ALP pays homage to the previous, but uses modern PHP site building techniques including WordPress based services for the intranet page. Including calendar, tournament registration, downloads, and server status pages<br> 
- ALP as a VM also allows us to bundle in all the games and files needed for clients to run them in one package. Simply build your VM, use our .VHDX drive and hit start.<br>
- <br>The built-in tournament, calendar, and download pages are built to take a load off of the LAN party admins running the show. Simply have the attendees browse to the intranet page and get their information there.
- <br>
- <br>Once started the virtual machine will update and launch all the game servers, and provide a portal for attendees to see what games are active, how to download the games, install them and connect.<br><br>
- <h2>The current server list hosted with the <b>ALP</b> VM includes:</h2>
- <img src="images/server_list.png">
- <br><br>
- <h2>What ALP is not!</h2>
- ALP is not intended to be used as an online service or server. Although you can port-forward through your firewall for the game servers to allow people to connect, because multiple places will be running the same software there could be conflicts with many of the same "LAN-Servers" on the game browsers.
- <br>ALP is not intended to be used as a web-forum or registration site prior to LANS.  Does not have a seating chart etc.
+                </div>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="videos/hero_vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Automated LAN Party</h1>
+        <p>Your one-stop virtualized server for legacy LAN game hosting.<br>
+        Host, manage, and play with ease—no technical headaches.</p>
+        <a href="downloads.php"><button class="cta-btn">Download Now</button></a>
+    </section>
+    <div class="main-container">
+        <div class="box fade-in">
+            <h2>What is Automated LAN Party?</h2>
+            <p>
+                ALP bundles all the games and files needed for clients in one package. Build your VM, use our .VHDX drive, and hit start.<br>
+                The built-in tournament, calendar, and download pages take a load off LAN party admins. Attendees browse the intranet page for all their information.
+            </p>
+            <img src="images/server_list.png" alt="Server List" class="expandable-img" id="serverListImg">
+        </div>
+        <div class="box fade-in">
+            <h2>What ALP is not!</h2>
+            <p>
+                ALP is not intended for online service or server use. While you can port-forward for game servers, multiple places running the same software may cause conflicts in game browsers.<br>
+                ALP is not a web-forum or registration site prior to LANs and does not have a seating chart.
+            </p>
+            <iframe width="100%" height="220" src="https://www.youtube.com/embed/r5QBKpWgvbk?si=b_URhT-4GkfZ97Mb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
 
- <br><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/r5QBKpWgvbk?si=b_URhT-4GkfZ97Mb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				</td><td width="*"> </td></tr></tbody></table><br></td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Modal for expanded image -->
+    <div id="imgModal" class="img-modal">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 
-	    <div class="top-strip"></div>
+    <script>
+    const img = document.getElementById('serverListImg');
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.getElementById('closeModal');
+
+    img.onclick = function() {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+        setTimeout(() => modalImg.classList.add('show'), 10);
+    }
+
+    closeBtn.onclick = function() {
+        modalImg.classList.remove('show');
+        setTimeout(() => modal.style.display = "none", 200);
+    }
+
+    modal.onclick = function(e) {
+        if (e.target === modal) {
+            modalImg.classList.remove('show');
+            setTimeout(() => modal.style.display = "none", 200);
+        }
+    }
+
+    // Fade-in animation for boxes
+    document.addEventListener('DOMContentLoaded', function() {
+        const boxes = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        boxes.forEach(box => observer.observe(box));
+    });
+
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('open');
+        });
+    });
+    </script>
 </body>
 </html>
