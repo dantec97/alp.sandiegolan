@@ -115,6 +115,14 @@
             navLinks.classList.toggle('open');
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const heroVideo = document.querySelector('.hero-video');
+        if (heroVideo) {
+            heroVideo.muted = true;
+            heroVideo.play();
+        }
+    });
     </script>
 </body>
 </html>
