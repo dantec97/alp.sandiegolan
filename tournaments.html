@@ -1,154 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        /* Center the entire content horizontally */
-        body {
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Apply background strip above the topmost row */
-        .top-strip {
-            background-color: #008081;
-            height: 25px;
-            width: 100%; /* Span the entire width */
-        }
-
-        /* Apply background image to the first row */
-        tr.first-row {
-            background-image: url('images/head-back.jpg');
-            background-size: cover; /* Adjust as needed */
-            background-position: center; /* Center the background image vertically */
-        }
-
-        /* Style the first row header */
-        tr.first-row td {
-            text-align: center;
-            padding: 30px 0; /* Increase vertical padding for header */
-            color: #fff; /* Text color */
-            font-size: 35px; /* Header size */
-            font-weight: bold; /* Bold text */
-            background-color: transparent; /* Remove background color */
-        }
-
-        /* Style the links in the second row */
-        tr.second-row {
-            background-color: #008081; /* Darker background color */
-        }
-
-        tr.second-row a {
-            text-decoration: none;
-            color: #dedede; /* Link color */
-            font-weight: bold; /* Bold text */
-            padding: 10px 20px; /* Add padding to space out the links */
-            display: inline-block; /* Center the links horizontally */
-        }
-
-        /* Style the Servers dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropbtn {
-            background-color: #008081;
-            color: #dedede;
-            border: none;
-            cursor: pointer;
-            font-weight: bold; /* Bold text */
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #008081;
-            min-width: 160px;
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: #dedede;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-weight: bold; /* Bold text */
-        }
-
-        .dropdown-content a:hover {
-            background-color: #dedede;
-            color: #008081; /* Hovered link color */
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Style the content row */
-        tr.content-row {
-            background-color: #dedede;
-        }
-        
-        /* Remove border between rows */
-        table {
-            border-collapse: collapse;
-            width: 100%; /* Span the entire width */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tournaments & Challenges | Automated LAN Party</title>
+    <link rel="stylesheet" href="./styles/calendar.css">
 </head>
 <body>
-    <!-- Top Strip -->
-    <div class="top-strip"></div>
-
-    <table>
-        <tbody>
-            <!-- First Row with Background Image -->
-            <tr class="first-row">
-                <td colspan="6">Automated LAN-Party</td>
-            </tr>
-            <!-- Second Row with Links -->
-            <tr class="second-row">
-                <td colspan="6">
-                    <a href="index.html">HOME</a> |
-                    <a href="calendar.html">CALENDAR</a> |
-                    <a href="tournaments.html">TOURNAMENTS & CHALLENGES</a> |
-                    <a href="chat.html">CHAT</a> |
-                    <a href="downloads.php">DOWNLOADS</a> |
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">ALP</div>
+            <nav class="nav-wrapper">
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="calendar.html">Calendar</a>
+                    <a href="tournaments.html">Tournaments</a>
+                    <a href="chat.html">Chat</a>
+                    <a href="downloads.php">Downloads</a>
                     <div class="dropdown">
-                        <span class="dropbtn">SERVERS &#x25BC;</span>
+                        <span class="dropbtn">Servers &#x25BC;</span>
                         <div class="dropdown-content">
-                            <a href="servers.html">VIRTUAL MACHINES</a>
-                            <a href="non_steam_servers.html">NON-STEAM SERVERS</a>
-                            <a href="steam_servers.html">STEAM SERVERS</a>
-                            <a href="server_browser.html">SERVER BROWSER</a>
+                            <a href="servers.html">Virtual Machines</a>
+                            <a href="non_steam_servers.html">Non-Steam Servers</a>
+                            <a href="steam_servers.html">Steam Servers</a>
+                            <a href="server_browser.html">Server Browser</a>
                         </div>
                     </div>
-                </td>
-            </tr>
-            <tr class="content-row">
-                <td colspan="6"><br><table border="0"><tbody><tr><td width="*"> </td><td width="1000" style="text-align: left;">
-            <!-- Third Row for Content -->	
- <h1><a href="https://www.tournamatch.com">Tournamatch</a></h1>
-Quick Start:<br>
-Create a game or two for organizing ladder and tournament events.<br>
-Update your main menu with links to the pages created in the previous step.<br>
-Continue on creating your first tournament or ladder.<br>
-<h3>Support</h3>
-For support, please email us at <a href="mailto:support@tournamatch.com">support@tournamatch.com or <a href="https://www.tournamatch.com/support" target="_blank">open a support ticket.</a><br>
+                </div>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="box fade-in">
+            <h1>Tournaments & Challenges</h1>
+            
+            <h2><a href="https://www.tournamatch.com" target="_blank">Tournamatch</a></h2>
+            <p>
+                <strong>Quick Start:</strong><br>
+                Create a game or two for organizing ladder and tournament events.<br>
+                Update your main menu with links to the pages created in the previous step.<br>
+                Continue on creating your first tournament or ladder.
+            </p>
+            
+            <h3>Support</h3>
+            <p>
+                For support, please email us at <a href="mailto:support@tournamatch.com">support@tournamatch.com</a> or <a href="https://www.tournamatch.com/support" target="_blank">open a support ticket.</a>
+            </p>
 
-<h1>Rafflepress</h1>
+            <h2>Rafflepress</h2>
+            <p>
+                For raffles and giveaways we use the Rafflepress plugin which works similar to gleim.<br><br>
+                For information on how to create your first raffle please visit <a href="https://rafflepress.com/docs/creating-your-first-giveaway/?utm_source=WordPress&utm_medium=rafflepress-about-page&utm_campaign=gettingstarted#add-new" target="_blank">https://rafflepress.com/</a><br><br>
+                Once a raffle or giveaway has been created you can post a link for people at the event to find it in the forum at the bottom of the tournaments / challenges page. As well as in the calendar events.
+            </p>
+            
+            <iframe src="https://www.youtube.com/embed/YlMEG3Eg-d4?si=cDrFsRQneme-bUr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navLinks = document.getElementById('navLinks');
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+            });
+        });
 
-For raffles and giveaways we use the Rafflepress plugin which works similar to gleim.
-<br>For inofmraiton on how to create your first raffle please visit <a href="https://rafflepress.com/docs/creating-your-first-giveaway/?utm_source=WordPress&utm_medium=rafflepress-about-page&utm_campaign=gettingstarted#add-new" target="_blank">https://rafflepress.com/</a>
-<br>Once a raffle or giveaway has been created you can post a link for people at the event to find it in the forum at the bottom of the tournaments / challenges page. As well as in the calendar events.<br>
-<Br><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YlMEG3Eg-d4?si=cDrFsRQneme-bUr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				</td><td width="*"> </td></tr></tbody></table><br></td>
-            </tr>
-        </tbody>
-    </table>
+        // Fade-in animation for boxes
+        document.addEventListener('DOMContentLoaded', function() {
+            const boxes = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
 
-	    <div class="top-strip"></div>
+            boxes.forEach(box => observer.observe(box));
+        });
+    </script>
 </body>
 </html>

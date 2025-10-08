@@ -18,17 +18,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px 32px;
-    position: relative; /* Add this */
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 20px;    /* Keep ALP close to left edge */
+    padding-right: 24px;  /* Add more space on right */
+    position: relative;
 }
+.nav-wrapper{
+    padding: 10px 100px 10px 10px;
+}
+
 
 .logo {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: #00b4d8;
+    flex: 0 0 auto; /* Prevents logo from growing/shrinking */
 }
 
 .nav-links {
@@ -116,6 +123,18 @@ body {
     margin-bottom: 24px;
     position: relative;
     z-index: 1;
+    
+}
+.box iframe {
+    display: flex;
+    width: 100%;
+    /* aspect-ratio: 1 / 1; Makes it a square */
+    height: auto;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    aspect-ratio: 4 / 3;
 }
 
 .hero p {
@@ -150,7 +169,7 @@ body {
 /* --- Content Boxes --- */
 .main-container {
     background: #f7f9fb;
-    max-width: 1100px;
+    max-width: 100%;
     margin: 48px auto 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -213,18 +232,20 @@ body {
         padding: 18px 8px;
     }
     .hero {
-        padding: 60px 0 40px 0;
+        min-height: 100vh;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
         border-radius: 0 0 24px 24px;
     }
-    .hero h1 {
-        font-size: 2.1rem;
-    }
-    .cta-btn {
-        padding: 14px 32px;
-        font-size: 1.1rem;
+    .hero h1, .hero p, .cta-btn {
+        margin: 0 0 18px 0;
+        padding: 1rem;
     }
 }
-
 
 /* Expandable image modal styles */
 .img-modal {
