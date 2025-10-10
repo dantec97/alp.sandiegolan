@@ -1,132 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>Steam Servers | Automated LAN Party</title>
-    <link rel="stylesheet" href="./styles/servers.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/servers.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="header-content">
-            <div class="logo">ALP</div>
-            <nav class="nav-wrapper">
-                <div class="nav-links" id="navLinks">
-                    <a href="index.html">Home</a>
-                    <a href="calendar.html">Calendar</a>
-                    <a href="tournaments.html">Tournaments</a>
-                    <a href="chat.html">Chat</a>
-                    <a href="downloads.html">Downloads</a>
-                    <a href="https://www.patreon.com/posts/get-automated-140772763" target="_blank">GET ALP</a>
-                    <div class="dropdown">
-                        <span class="dropbtn">Servers &#x25BC;</span>
-                        <div class="dropdown-content">
-                            <a href="servers.html">Virtual Machines</a>
-                            <a href="non_steam_servers.html">Non-Steam Servers</a>
-                            <a href="steam_servers.html">Steam Servers</a>
-                            <a href="server_browser.html">Server Browser</a>
-                        </div>
-                    </div>
-                </div>
-                <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
-                    <span></span><span></span><span></span>
-                </button>
-            </nav>
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/ALP_logo_txt.png" alt="ALP Logo" />
+          </a>
         </div>
+        <nav class="nav-wrapper">
+          <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="tournaments.html">Tournaments</a>
+            <a href="chat.html">Chat</a>
+            <a href="downloads.html">Downloads</a>
+            <a
+              href="https://www.patreon.com/posts/get-automated-140772763"
+              target="_blank"
+              >GET ALP</a
+            >
+            <div class="dropdown">
+              <span class="dropbtn">Servers &#x25BC;</span>
+              <div class="dropdown-content">
+                <a href="servers.html">Virtual Machines</a>
+                <a href="non_steam_servers.html">Non-Steam Servers</a>
+                <a href="steam_servers.html">Steam Servers</a>
+                <a href="server_browser.html">Server Browser</a>
+              </div>
+            </div>
+          </div>
+          <button
+            class="hamburger"
+            id="hamburgerBtn"
+            aria-label="Open navigation"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+      </div>
     </header>
     <div class="main-container">
-        <div class="box fade-in">
-            <h1>Steam Servers</h1>
-            <h2>Removing Servers from Startup</h2>
-            <p>
-                To remove a server from the startup list, simply run <strong>C:\Servers\Edit Batch Launchers.py</strong> and uncheck the servers you don't want auto-launching with Windows.<br>
-                This will add a "REM" line in front of that game's launcher in the launch servers batch files so it skips those lines.
-            </p>
-            <img src="images/server_launcher_config.PNG" alt="Server Launcher Config">
-        </div>
-        <div class="box fade-in">
-            <h2>Adding a New Steam-based Server to the List</h2>
-            <ol>
-                <li>
-                    Browse to the SteamCMD folder and make a copy of <strong>cs_ds.txt</strong> to edit its contents and rename it <strong>your_new_game_ds.txt</strong> (e.g., <strong>newgame_ds.txt</strong>).<br>
-                    Edit the newly renamed file to have the <a href="https://steamdb.info/apps/" target="_blank">correct Steam APP ID</a> for the game server you're building.<br>
-                    Make sure to give it a directory. Do not include spaces in the directory name or it may error. <strong>C:\new_game</strong> works fine.
-                    <br><img src="images/cs_ds.PNG" alt="SteamCMD Config">
-                </li>
-                <li>
-                    Make desktop shortcuts and readme/config file shortcuts in a folder under <strong>C:\Servers</strong> so it can be found easily. That folder has a shortcut in the quick launch bar and desktop. You can right click on this new folder and under properties, customize it to give it a nice icon to match the game's.<br>
-                    Copy the CS:GO folder from the <strong>C:\Servers</strong> page and rename it to your game name. Also rename the files within it for clarity.<br>
-                    Edit the "update server settings" shortcut to point to the <strong>newgame_ds.txt</strong> file you made earlier in the SteamCMD folder. Also edit the arguments within the update new game server shortcut.
-                    <br><img src="images/update_shortcut.PNG" alt="Update Shortcut">
-                    <br><img src="images/customize_folder.PNG" alt="Customize Folder">
-                </li>
-                <li>
-                    Run your newly created update shortcut to start downloading the game itself from the internet. Once it's finished, you can point the "New Game Server" shortcut at the newly downloaded server on <strong>C:\</strong>.<br>
-                    Make the server folder containing your new shortcuts look right by customizing the folder icon.
-                </li>
-                <li>
-                    Make the game launch with Windows:<br>
-                    Copy a batch file within <strong>C:\Games\Batch_Files</strong> such as "update_csgo.bat" and rename it "update_newgame.bat" and edit it, changing it to launch the newly created update shortcut you added to the <strong>C:\Servers</strong> directory, changing its echo'd callouts from referencing CSGO to your new game.<br>
-                    <img src="images/update_newgame_bat.PNG" alt="Update New Game Batch">
-                </li>
-                <li>
-                    Clone launch_csgo.bat and do the same thing, but change the .exe it looks for so it doesn't launch the service twice to the .exe your game server is called in task manager when running. And the .lnk shortcut to the one we updated in the <strong>C:\Servers\new game</strong> folder that launches the game server.
-                </li>
-                <li>
-                    Finally, add a call line to <strong>C:\Servers\Launch_all_servers.bat</strong>.<br>
-                    <img src="images/launch_steam_servers_bat.PNG" alt="Launch Steam Servers Batch">
-                </li>
-            </ol>
-            <p>
-                Now you can either launch the server from the servers folder you created under <strong>C:\Servers</strong>, or let it auto-launch from the batch file!
-            </p>
-        </div>
-        <div class="box fade-in img-row">
-            <img src="images/Copy_CS_folder.PNG" alt="Copy CS Folder" width="250">
-            <img src="images/steam_servers_folder.PNG" alt="Steam Servers Folder" width="250">
-            <img src="images/update_server_shortcut.png" alt="Update Server Shortcut" width="250">
-        </div>
+      <div class="box fade-in">
+        <h1>Steam Servers</h1>
+        <h2>Removing Servers from Startup</h2>
+        <p>
+          To remove a server from the startup list, simply run
+          <strong>C:\Servers\Edit Batch Launchers.py</strong> and
+          uncheck the servers you don't want auto-launching with
+          Windows.<br />
+          This will add a "REM" line in front of that game's launcher
+          in the launch servers batch files so it skips those lines.
+        </p>
+        <img
+          src="images/server_launcher_config.PNG"
+          alt="Server Launcher Config"
+        />
+      </div>
+      <div class="box fade-in">
+        <h2>Adding a New Steam-based Server to the List</h2>
+        <ol>
+          <li>
+            Browse to the SteamCMD folder and make a copy of
+            <strong>cs_ds.txt</strong> to edit its contents and rename
+            it <strong>your_new_game_ds.txt</strong> (e.g.,
+            <strong>newgame_ds.txt</strong>).<br />
+            Edit the newly renamed file to have the
+            <a href="https://steamdb.info/apps/" target="_blank"
+              >correct Steam APP ID</a
+            >
+            for the game server you're building.<br />
+            Make sure to give it a directory. Do not include spaces in
+            the directory name or it may error.
+            <strong>C:\new_game</strong> works fine. <br /><img
+              src="images/cs_ds.PNG"
+              alt="SteamCMD Config"
+            />
+          </li>
+          <li>
+            Make desktop shortcuts and readme/config file shortcuts in
+            a folder under <strong>C:\Servers</strong> so it can be
+            found easily. That folder has a shortcut in the quick
+            launch bar and desktop. You can right click on this new
+            folder and under properties, customize it to give it a
+            nice icon to match the game's.<br />
+            Copy the CS:GO folder from the
+            <strong>C:\Servers</strong> page and rename it to your
+            game name. Also rename the files within it for clarity.<br />
+            Edit the "update server settings" shortcut to point to the
+            <strong>newgame_ds.txt</strong> file you made earlier in
+            the SteamCMD folder. Also edit the arguments within the
+            update new game server shortcut. <br /><img
+              src="images/update_shortcut.PNG"
+              alt="Update Shortcut"
+            />
+            <br /><img
+              src="images/customize_folder.PNG"
+              alt="Customize Folder"
+            />
+          </li>
+          <li>
+            Run your newly created update shortcut to start
+            downloading the game itself from the internet. Once it's
+            finished, you can point the "New Game Server" shortcut at
+            the newly downloaded server on <strong>C:\</strong>.<br />
+            Make the server folder containing your new shortcuts look
+            right by customizing the folder icon.
+          </li>
+          <li>
+            Make the game launch with Windows:<br />
+            Copy a batch file within
+            <strong>C:\Games\Batch_Files</strong> such as
+            "update_csgo.bat" and rename it "update_newgame.bat" and
+            edit it, changing it to launch the newly created update
+            shortcut you added to the
+            <strong>C:\Servers</strong> directory, changing its echo'd
+            callouts from referencing CSGO to your new game.<br />
+            <img
+              src="images/update_newgame_bat.PNG"
+              alt="Update New Game Batch"
+            />
+          </li>
+          <li>
+            Clone launch_csgo.bat and do the same thing, but change
+            the .exe it looks for so it doesn't launch the service
+            twice to the .exe your game server is called in task
+            manager when running. And the .lnk shortcut to the one we
+            updated in the <strong>C:\Servers\new game</strong> folder
+            that launches the game server.
+          </li>
+          <li>
+            Finally, add a call line to
+            <strong>C:\Servers\Launch_all_servers.bat</strong>.<br />
+            <img
+              src="images/launch_steam_servers_bat.PNG"
+              alt="Launch Steam Servers Batch"
+            />
+          </li>
+        </ol>
+        <p>
+          Now you can either launch the server from the servers folder
+          you created under <strong>C:\Servers</strong>, or let it
+          auto-launch from the batch file!
+        </p>
+      </div>
+      <div class="box fade-in img-row">
+        <img
+          src="images/Copy_CS_folder.PNG"
+          alt="Copy CS Folder"
+          width="250"
+        />
+        <img
+          src="images/steam_servers_folder.PNG"
+          alt="Steam Servers Folder"
+          width="250"
+        />
+        <img
+          src="images/update_server_shortcut.png"
+          alt="Update Server Shortcut"
+          width="250"
+        />
+      </div>
     </div>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu toggle
-    const hamburger = document.getElementById('hamburgerBtn');
-    const navLinks = document.getElementById('navLinks');
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
-        });
-    }
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hamburger menu toggle
+        const hamburger = document.getElementById("hamburgerBtn");
+        const navLinks = document.getElementById("navLinks");
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", function () {
+            navLinks.classList.toggle("open");
+          });
+        }
 
-    // Dropdown menu toggle for mobile/touch
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    if (dropbtn && dropdownContent) {
-        dropbtn.addEventListener('click', function(e) {
+        // Dropdown menu toggle for mobile/touch
+        const dropbtn = document.querySelector(".dropbtn");
+        const dropdownContent = document.querySelector(
+          ".dropdown-content"
+        );
+        if (dropbtn && dropdownContent) {
+          dropbtn.addEventListener("click", function (e) {
             e.preventDefault();
-            dropdownContent.style.display = 
-                dropdownContent.style.display === 'block' ? 'none' : 'block';
-        });
-        // Optional: close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!dropbtn.contains(e.target) && !dropdownContent.contains(e.target)) {
-                dropdownContent.style.display = 'none';
+            dropdownContent.style.display =
+              dropdownContent.style.display === "block"
+                ? "none"
+                : "block";
+          });
+          // Optional: close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (
+              !dropbtn.contains(e.target) &&
+              !dropdownContent.contains(e.target)
+            ) {
+              dropdownContent.style.display = "none";
             }
-        });
-    }
+          });
+        }
 
-    // Fade-in animation for boxes
-    const boxes = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.08 }); // Lower threshold for mobile
+        // Fade-in animation for boxes
+        const boxes = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.08 }
+        ); // Lower threshold for mobile
 
-    boxes.forEach(box => observer.observe(box));
-});
+        boxes.forEach((box) => observer.observe(box));
+      });
     </script>
-</body>
+  </body>
 </html>

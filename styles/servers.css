@@ -20,10 +20,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    padding-left: 20px;    /* Keep ALP close to left edge */
-    padding-right: 24px;   /* Add more space on right */
+    padding: 8px 20px; /* Even more compact */
     position: relative;
 }
 
@@ -247,16 +244,36 @@ body {
     transition: 0.3s;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    height: auto;
+    flex: 0 0 auto;
+    filter: brightness(0) saturate(100%) invert(21%) sepia(81%) saturate(1322%) hue-rotate(153deg) brightness(97%) contrast(101%);
+    /* This filter tints black logos to match #00b4d8 theme color */
+}
+
+.logo img {
+    height: 60px; /* Slightly smaller logo */
+    width: auto;
+    margin-right: 0;
+    cursor: pointer;
+    display: block;
+}
+
 /* --- Mobile nav --- */
 @media (max-width: 900px) {
     .header-content {
         flex-direction: row;
         gap: 0;
-        padding: 18px 8px;
+        padding: 8px 8px; /* Reduced from 18px to 8px for compact mobile header */
         position: relative;
     }
     .logo {
         margin-left: 8px;
+    }
+    .logo img {
+        height: 50px; /* Slightly smaller logo on mobile */
     }
     nav {
         flex: 1;

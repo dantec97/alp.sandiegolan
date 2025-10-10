@@ -19,23 +19,28 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    padding-left: 20px;    /* Keep ALP close to left edge */
-    padding-right: 24px;  /* Add more space on right */
+    padding: 8px 20px; /* Even more compact */
     position: relative;
 }
 .nav-wrapper{
     padding: 10px 100px 10px 10px;
 }
 
-
 .logo {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #00b4d8;
-    flex: 0 0 auto; /* Prevents logo from growing/shrinking */
+    display: flex;
+    align-items: center;
+    height: auto;
+    flex: 0 0 auto;
+    filter: brightness(0) saturate(100%) invert(21%) sepia(81%) saturate(1322%) hue-rotate(153deg) brightness(97%) contrast(101%);
+    /* This filter tints black logos to match #00b4d8 theme color */
+}
+
+.logo img {
+    height: 60px; /* Slightly smaller logo */
+    width: auto;
+    margin-right: 0;
+    cursor: pointer;
+    display: block;
 }
 
 .nav-links {
@@ -246,8 +251,47 @@ body {
         padding: 1rem;
     }
 
-    
-
+    .header-content {
+        flex-direction: row;
+        gap: 0;
+        padding: 8px 8px; /* Reduced from 18px to 8px for compact mobile header */
+        position: relative;
+    }
+    .logo {
+        margin-left: 8px;
+    }
+    .logo img {
+        height: 50px; /* Slightly smaller logo on mobile */
+    }
+    nav {
+        flex: 1;
+        position: relative;
+    }
+    .nav-links {
+        position: fixed;
+        top: 0; right: 0;
+        height: 100vh;
+        width: 220px;
+        background: #062E3E;
+        flex-direction: column;
+        gap: 0;
+        padding-top: 80px;
+        transform: translateX(100%);
+        transition: transform 0.3s;
+        box-shadow: -2px 0 16px rgba(0,0,0,0.12);
+        z-index: 1001;
+    }
+    .nav-links.open {
+        transform: translateX(0);
+    }
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100;
+    }
 }
 
 /* Expandable image modal styles */
@@ -347,11 +391,14 @@ body {
     .header-content {
         flex-direction: row;
         gap: 0;
-        padding: 18px 8px;
+        padding: 8px 8px; /* Reduced from 18px to 8px for compact mobile header */
         position: relative;
     }
     .logo {
         margin-left: 8px;
+    }
+    .logo img {
+        height: 50px; /* Slightly smaller logo on mobile */
     }
     nav {
         flex: 1;

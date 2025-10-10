@@ -1,197 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        /* Center the entire content horizontally */
-        body {
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Apply background strip above the topmost row */
-        .top-strip {
-            background-color: #008081;
-            height: 25px;
-            width: 100%; /* Span the entire width */
-        }
-
-        /* Apply background image to the first row */
-        tr.first-row {
-            background-image: url('images/head-back.jpg');
-            background-size: cover; /* Adjust as needed */
-            background-position: center; /* Center the background image vertically */
-        }
-
-        /* Style the first row header */
-        tr.first-row td {
-            text-align: center;
-            padding: 30px 0; /* Increase vertical padding for header */
-            color: #fff; /* Text color */
-            font-size: 35px; /* Header size */
-            font-weight: bold; /* Bold text */
-            background-color: transparent; /* Remove background color */
-        }
-
-        /* Style the links in the second row */
-        tr.second-row {
-            background-color: #008081; /* Darker background color */
-        }
-
-        tr.second-row a {
-            text-decoration: none;
-            color: #dedede; /* Link color */
-            font-weight: bold; /* Bold text */
-            padding: 10px 20px; /* Add padding to space out the links */
-            display: inline-block; /* Center the links horizontally */
-        }
-
-        /* Style the Servers dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropbtn {
-            background-color: #008081;
-            color: #dedede;
-            border: none;
-            cursor: pointer;
-            font-weight: bold; /* Bold text */
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #008081;
-            min-width: 160px;
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: #dedede;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-weight: bold; /* Bold text */
-        }
-
-        .dropdown-content a:hover {
-            background-color: #dedede;
-            color: #008081; /* Hovered link color */
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Style the content row */
-        tr.content-row {
-            background-color: #dedede;
-        }
-        
-        /* Remove border between rows */
-        table {
-            border-collapse: collapse;
-            width: 100%; /* Span the entire width */
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank you!</title>
+    <link rel="stylesheet" href="./styles/pages.css" />
 </head>
 <body>
-
-
-
-    <!-- Top Strip -->
-    <div class="top-strip"></div>
-
-    <table>
-        <tbody>
-            <!-- First Row with Background Image -->
-            <tr class="first-row">
-                <td colspan="6">Automated LAN-Party</td>
-            </tr>
-            <!-- Second Row with Links -->
-            <tr class="second-row">
-                <td colspan="6">
-                    <a href="index.html">HOME</a> |
-                    <a href="calendar.html">CALENDAR</a> |
-                    <a href="tournaments.html">TOURNAMENTS & CHALLENGES</a> |
-                    <a href="chat.html">CHAT</a> |
-                    <a href="downloads.php">DOWNLOADS</a> |
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/ALP_logo_txt.png" alt="ALP Logo" />
+                </a>
+            </div>
+            <nav class="nav-wrapper">
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="calendar.html">Calendar</a>
+                    <a href="tournaments.html">Tournaments</a>
+                    <a href="chat.html">Chat</a>
+                    <a href="downloads.html">Downloads</a>
+                    <a href="https://www.patreon.com/posts/get-automated-140772763" target="_blank">GET ALP</a>
                     <div class="dropdown">
-                        <span class="dropbtn">SERVERS &#x25BC;</span>
+                        <span class="dropbtn">Servers &#x25BC;</span>
                         <div class="dropdown-content">
-                            <a href="servers.html">VIRTUAL MACHINES</a>
-                            <a href="non_steam_servers.html">NON-STEAM SERVERS</a>
-                            <a href="steam_servers.html">STEAM SERVERS</a>
+                            <a href="servers.html">Virtual Machines</a>
+                            <a href="non_steam_servers.html">Non-Steam Servers</a>
+                            <a href="steam_servers.html">Steam Servers</a>
+                            <a href="server_browser.html">Server Browser</a>
                         </div>
                     </div>
-                </td>
-            </tr>
-            <tr class="content-row">
-                <td colspan="6"><br><table border="0"><tbody><tr><td width="*"> </td><td width="1000" style="text-align: left;">
-            <!-- Third Row for Content -->	
-  <h1>Downloads</h1>
-Upload Date: 09/28/2025
-    <button onclick="promptForPassword2()">Download LAN-Server.7z - Primary</button> 
-<br><br>.7z includs the main file itself, including a readme, remote desktop shortcut and the .vhdx virtual hard drive.<br>
-Available currently to LANfest Chapters for beta testing upon request.<br>
-<br>
-Or if you're looking to install ALP on an existing windows machine we have a batch file which will lead you through building ALP on your box!
-    <button onclick="promptForPassword5()">Download Install-ALP.zip - Primary</button> 
-<br>
-<br>
-A special treat for our supporters, the SteamCMD Builder.  An application that builds custom batch files which will allow you to download or patch games from steam via CMD.
-    <button onclick="promptForPassword1()">Download SteamCMD-Builder.zip - Primary</button> 
-<br>
-<br>
-<Br>
-Thank you for donating to support ALP! The master ALP password is: <b>"LANpass1337"</b><br>
-
-				</td><td width="*"> </td></tr></tbody></table><br></td>
-            </tr>
-        </tbody>
-    </table>
-
-	    <div class="top-strip"></div>
-</body>
+                </div>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="box fade-in">
+            <h1>Downloads</h1>
+            <p><strong>Upload Date:</strong> 09/28/2025</p>
+            <button class="download-btn" onclick="promptForPassword2()">Download LAN-Server.7z - Primary</button>
+            <br><br>
+            <span>.7z includes the main file itself, including a readme, remote desktop shortcut and the .vhdx virtual hard drive.<br>
+            Available currently to LANfest Chapters for beta testing upon request.</span>
+            <br><br>
+            <span>Or if you're looking to install ALP on an existing Windows machine, we have a batch file which will lead you through building ALP on your box!</span>
+            <br>
+            <button class="download-btn" onclick="promptForPassword5()">Download Install-ALP.zip - Primary</button>
+            <br><br>
+            <span>A special treat for our supporters, the SteamCMD Builder. An application that builds custom batch files which will allow you to download or patch games from Steam via CMD.</span>
+            <br>
+            <button class="download-btn" onclick="promptForPassword1()">Download SteamCMD-Builder.zip - Primary</button>
+            <br><br>
+            <strong>Thank you for donating to support ALP!</strong> The master ALP password is: <b>"LANpass1337"</b>
+        </div>
+    </div>
     <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburgerBtn');
+            const navLinks = document.getElementById('navLinks');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('open');
+                });
+            }
+
+            // Dropdown menu toggle for mobile/touch
+            const dropbtn = document.querySelector('.dropbtn');
+            const dropdownContent = document.querySelector('.dropdown-content');
+            if (dropbtn && dropdownContent) {
+                dropbtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdownContent.style.display =
+                        dropdownContent.style.display === 'block' ? 'none' : 'block';
+                });
+                // Optional: close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropbtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+                        dropdownContent.style.display = 'none';
+                    }
+                });
+            }
+
+            // Fade-in animation for boxes
+            const boxes = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08 }); // Lower threshold for mobile
+
+            boxes.forEach(box => observer.observe(box));
+        });
+
         function promptForPassword1() {
             const enteredPassword = prompt("Please enter the password:");
-
-            // Replace "LANpass1337" with the desired password
             if (enteredPassword === "LANpass1337") {
-                // Redirect to the file download
                 window.location.href = "https://sandiegolan.net/ftp/SteamCMD-Builder.zip";
             } else {
                 alert("Incorrect password. Please try again.");
             }
         }
-    </script>
-    <script>
         function promptForPassword2() {
             const enteredPassword = prompt("Please enter the password:");
-
-            // Replace "LANpass1337" with the desired password
             if (enteredPassword === "LANpass1337") {
-                // Redirect to the file download
                 window.location.href = "https://alp.sandiegolan.net/LAN-Server.7z";
             } else {
                 alert("Incorrect password. Please try again.");
             }
         }
-    </script>
-    <script>
         function promptForPassword5() {
             const enteredPassword = prompt("Please enter the password:");
-
-            // Replace "LANpass1337" with the desired password
             if (enteredPassword === "LANpass1337") {
-                // Redirect to the file download
                 window.location.href = "https://alp.sandiegolan.net/Install-ALP.zip";
             } else {
                 alert("Incorrect password. Please try again.");
             }
         }
     </script>
+</body>
 </html>

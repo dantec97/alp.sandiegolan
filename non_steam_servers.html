@@ -1,119 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>Non-Steam Servers | Automated LAN Party</title>
-    <link rel="stylesheet" href="./styles/servers.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/servers.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="header-content">
-            <div class="logo">ALP</div>
-            <nav class="nav-wrapper">
-                <div class="nav-links" id="navLinks">
-                    <a href="index.html">Home</a>
-                    <a href="calendar.html">Calendar</a>
-                    <a href="tournaments.html">Tournaments</a>
-                    <a href="chat.html">Chat</a>
-                    <a href="downloads.html">Downloads</a>
-                    <a href="https://www.patreon.com/posts/get-automated-140772763" target="_blank">GET ALP</a>
-                    <div class="dropdown">
-                        <span class="dropbtn">Servers &#x25BC;</span>
-                        <div class="dropdown-content">
-                            <a href="servers.html">Virtual Machines</a>
-                            <a href="non_steam_servers.html">Non-Steam Servers</a>
-                            <a href="steam_servers.html">Steam Servers</a>
-                            <a href="server_browser.html">Server Browser</a>
-                        </div>
-                    </div>
-                </div>
-                <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
-                    <span></span><span></span><span></span>
-                </button>
-            </nav>
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/ALP_logo_txt.png" alt="ALP Logo" />
+          </a>
         </div>
+        <nav class="nav-wrapper">
+          <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="tournaments.html">Tournaments</a>
+            <a href="chat.html">Chat</a>
+            <a href="downloads.html">Downloads</a>
+            <a
+              href="https://www.patreon.com/posts/get-automated-140772763"
+              target="_blank"
+              >GET ALP</a
+            >
+            <div class="dropdown">
+              <span class="dropbtn">Servers &#x25BC;</span>
+              <div class="dropdown-content">
+                <a href="servers.html">Virtual Machines</a>
+                <a href="non_steam_servers.html">Non-Steam Servers</a>
+                <a href="steam_servers.html">Steam Servers</a>
+                <a href="server_browser.html">Server Browser</a>
+              </div>
+            </div>
+          </div>
+          <button
+            class="hamburger"
+            id="hamburgerBtn"
+            aria-label="Open navigation"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+      </div>
     </header>
     <div class="main-container">
-        <div class="box fade-in">
-            <h1>Non-Steam Servers</h1>
-            <h2>Removing Servers from Startup</h2>
-            <p>
-                To remove a server from the startup list, simply run <strong>C:\Servers\Edit Batch Launchers.py</strong> and uncheck the servers you don't want auto-launching with Windows.<br>
-                This will add a "REM" line in front of that game's launcher in the launch servers batch files so it skips those lines.
-            </p>
-            <img src="images/server_launcher_config.PNG" alt="Server Launcher Config">
-        </div>
-        <div class="box fade-in">
-            <h2>Adding a New Server to the List</h2>
-            <p>
-                The game server files should be saved in the <strong>C:\Games</strong> directory for the most part. Then you make the normal desktop shortcuts and readme/config file shortcuts in a folder under <strong>C:\Servers\</strong> so it can be found easily. That folder has a shortcut in the quick launch bar and desktop. You can right click on this new folder and under properties, customize it to give it a nice icon to match the game's.
-            </p>
-            <img src="images/scorched_shortcut.PNG" alt="Scorched Shortcut">
-        </div>
-        <div class="box fade-in">
-            <h2>Creating Batch Files</h2>
-            <p>
-                Then you copy a batch file within <strong>C:\Games\Batch_Files</strong> such as "launch_scorched.bat" and rename it "launch_gamename.bat" and edit it. Change the .exe it looks for so it doesn't launch the service twice to the .exe your game server is called in task manager when running, changing it to launch the newly created shortcut you added to the <strong>C:\Servers</strong> directory, changing its echo'd callouts from saying "Launching scorched server" and "Skipping launching scorched server" to whatever your game's name is.
-            </p>
-            <img src="images/scorched_bat.PNG" alt="Scorched Batch File">
-        </div>
-        <div class="box fade-in">
-            <h2>Final Steps</h2>
-            <p>
-                Then finally add a call line to <strong>C:\Servers\Launch_all_servers.bat</strong>
-            </p>
-            <img src="images/call_scorched.PNG" alt="Call Scorched">
-            <p>
-                Now you can either launch the server from the servers folder you created under <strong>C:\Servers</strong>, or let it auto-launch from the batch file!
-            </p>
-        </div>
-        <div class="box fade-in img-row">
-            <img src="images/scorched_folder.PNG" alt="Scorched Folder">
-            <img src="images/servers_folder.PNG" alt="Servers Folder">
-            <img src="images/games_folder.PNG" alt="Games Folder">
-        </div>
+      <div class="box fade-in">
+        <h1>Non-Steam Servers</h1>
+        <h2>Removing Servers from Startup</h2>
+        <p>
+          To remove a server from the startup list, simply run
+          <strong>C:\Servers\Edit Batch Launchers.py</strong> and
+          uncheck the servers you don't want auto-launching with
+          Windows.<br />
+          This will add a "REM" line in front of that game's launcher
+          in the launch servers batch files so it skips those lines.
+        </p>
+        <img
+          src="images/server_launcher_config.PNG"
+          alt="Server Launcher Config"
+        />
+      </div>
+      <div class="box fade-in">
+        <h2>Adding a New Server to the List</h2>
+        <p>
+          The game server files should be saved in the
+          <strong>C:\Games</strong> directory for the most part. Then
+          you make the normal desktop shortcuts and readme/config file
+          shortcuts in a folder under <strong>C:\Servers\</strong> so
+          it can be found easily. That folder has a shortcut in the
+          quick launch bar and desktop. You can right click on this
+          new folder and under properties, customize it to give it a
+          nice icon to match the game's.
+        </p>
+        <img
+          src="images/scorched_shortcut.PNG"
+          alt="Scorched Shortcut"
+        />
+      </div>
+      <div class="box fade-in">
+        <h2>Creating Batch Files</h2>
+        <p>
+          Then you copy a batch file within
+          <strong>C:\Games\Batch_Files</strong> such as
+          "launch_scorched.bat" and rename it "launch_gamename.bat"
+          and edit it. Change the .exe it looks for so it doesn't
+          launch the service twice to the .exe your game server is
+          called in task manager when running, changing it to launch
+          the newly created shortcut you added to the
+          <strong>C:\Servers</strong> directory, changing its echo'd
+          callouts from saying "Launching scorched server" and
+          "Skipping launching scorched server" to whatever your game's
+          name is.
+        </p>
+        <img
+          src="images/scorched_bat.PNG"
+          alt="Scorched Batch File"
+        />
+      </div>
+      <div class="box fade-in">
+        <h2>Final Steps</h2>
+        <p>
+          Then finally add a call line to
+          <strong>C:\Servers\Launch_all_servers.bat</strong>
+        </p>
+        <img src="images/call_scorched.PNG" alt="Call Scorched" />
+        <p>
+          Now you can either launch the server from the servers folder
+          you created under <strong>C:\Servers</strong>, or let it
+          auto-launch from the batch file!
+        </p>
+      </div>
+      <div class="box fade-in img-row">
+        <img src="images/scorched_folder.PNG" alt="Scorched Folder" />
+        <img src="images/servers_folder.PNG" alt="Servers Folder" />
+        <img src="images/games_folder.PNG" alt="Games Folder" />
+      </div>
     </div>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu toggle
-    const hamburger = document.getElementById('hamburgerBtn');
-    const navLinks = document.getElementById('navLinks');
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
-        });
-    }
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hamburger menu toggle
+        const hamburger = document.getElementById("hamburgerBtn");
+        const navLinks = document.getElementById("navLinks");
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", function () {
+            navLinks.classList.toggle("open");
+          });
+        }
 
-    // Dropdown menu toggle for mobile/touch
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    if (dropbtn && dropdownContent) {
-        dropbtn.addEventListener('click', function(e) {
+        // Dropdown menu toggle for mobile/touch
+        const dropbtn = document.querySelector(".dropbtn");
+        const dropdownContent = document.querySelector(
+          ".dropdown-content"
+        );
+        if (dropbtn && dropdownContent) {
+          dropbtn.addEventListener("click", function (e) {
             e.preventDefault();
-            dropdownContent.style.display = 
-                dropdownContent.style.display === 'block' ? 'none' : 'block';
-        });
-        // Optional: close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!dropbtn.contains(e.target) && !dropdownContent.contains(e.target)) {
-                dropdownContent.style.display = 'none';
+            dropdownContent.style.display =
+              dropdownContent.style.display === "block"
+                ? "none"
+                : "block";
+          });
+          // Optional: close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (
+              !dropbtn.contains(e.target) &&
+              !dropdownContent.contains(e.target)
+            ) {
+              dropdownContent.style.display = "none";
             }
-        });
-    }
+          });
+        }
 
-    // Fade-in animation for boxes
-    const boxes = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.2 });
+        // Fade-in animation for boxes
+        const boxes = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
 
-    boxes.forEach(box => observer.observe(box));
-});
+        boxes.forEach((box) => observer.observe(box));
+      });
     </script>
-</body>
+  </body>
 </html>

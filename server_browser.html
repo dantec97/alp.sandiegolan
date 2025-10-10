@@ -1,88 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>Server Browser | Automated LAN Party</title>
-    <link rel="stylesheet" href="./styles/servers.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/servers.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="header-content">
-            <div class="logo">ALP</div>
-            <nav class="nav-wrapper">
-                <div class="nav-links" id="navLinks">
-                    <a href="index.html">Home</a>
-                    <a href="calendar.html">Calendar</a>
-                    <a href="tournaments.html">Tournaments</a>
-                    <a href="chat.html">Chat</a>
-                    <a href="downloads.html">Downloads</a>
-                    <a href="https://www.patreon.com/posts/get-automated-140772763" target="_blank">GET ALP</a>
-                    <div class="dropdown">
-                        <span class="dropbtn">Servers &#x25BC;</span>
-                        <div class="dropdown-content">
-                            <a href="servers.html">Virtual Machines</a>
-                            <a href="non_steam_servers.html">Non-Steam Servers</a>
-                            <a href="steam_servers.html">Steam Servers</a>
-                            <a href="server_browser.html">Server Browser</a>
-                        </div>
-                    </div>
-                </div>
-                <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
-                    <span></span><span></span><span></span>
-                </button>
-            </nav>
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/ALP_logo_txt.png" alt="ALP Logo" />
+          </a>
         </div>
+        <nav class="nav-wrapper">
+          <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="tournaments.html">Tournaments</a>
+            <a href="chat.html">Chat</a>
+            <a href="downloads.html">Downloads</a>
+            <a
+              href="https://www.patreon.com/posts/get-automated-140772763"
+              target="_blank"
+              >GET ALP</a
+            >
+            <div class="dropdown">
+              <span class="dropbtn">Servers &#x25BC;</span>
+              <div class="dropdown-content">
+                <a href="servers.html">Virtual Machines</a>
+                <a href="non_steam_servers.html">Non-Steam Servers</a>
+                <a href="steam_servers.html">Steam Servers</a>
+                <a href="server_browser.html">Server Browser</a>
+              </div>
+            </div>
+          </div>
+          <button
+            class="hamburger"
+            id="hamburgerBtn"
+            aria-label="Open navigation"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+      </div>
     </header>
     <div class="main-container">
-        <div class="box fade-in">
-            <h1>Server Browser</h1>
-            <p>
-                The built-in webserver in ALP helps users find out what's being played from the library of games, where to download them, and how to connect.
-            </p>
-            <img src="images/ALP_servers.png" alt="ALP Server Browser Screenshot">
-        </div>
+      <div class="box fade-in">
+        <h1>Server Browser</h1>
+        <p>
+          The built-in webserver in ALP helps users find out what's
+          being played from the library of games, where to download
+          them, and how to connect.
+        </p>
+        <img
+          src="images/ALP_servers.png"
+          alt="ALP Server Browser Screenshot"
+        />
+      </div>
     </div>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu toggle
-    const hamburger = document.getElementById('hamburgerBtn');
-    const navLinks = document.getElementById('navLinks');
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
-        });
-    }
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hamburger menu toggle
+        const hamburger = document.getElementById("hamburgerBtn");
+        const navLinks = document.getElementById("navLinks");
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", function () {
+            navLinks.classList.toggle("open");
+          });
+        }
 
-    // Dropdown menu toggle for mobile/touch
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    if (dropbtn && dropdownContent) {
-        dropbtn.addEventListener('click', function(e) {
+        // Dropdown menu toggle for mobile/touch
+        const dropbtn = document.querySelector(".dropbtn");
+        const dropdownContent = document.querySelector(
+          ".dropdown-content"
+        );
+        if (dropbtn && dropdownContent) {
+          dropbtn.addEventListener("click", function (e) {
             e.preventDefault();
-            dropdownContent.style.display = 
-                dropdownContent.style.display === 'block' ? 'none' : 'block';
-        });
-        // Optional: close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!dropbtn.contains(e.target) && !dropdownContent.contains(e.target)) {
-                dropdownContent.style.display = 'none';
+            dropdownContent.style.display =
+              dropdownContent.style.display === "block"
+                ? "none"
+                : "block";
+          });
+          // Optional: close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (
+              !dropbtn.contains(e.target) &&
+              !dropdownContent.contains(e.target)
+            ) {
+              dropdownContent.style.display = "none";
             }
-        });
-    }
+          });
+        }
 
-    // Fade-in animation for boxes
-    const boxes = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.08 }); // Lower threshold for mobile
+        // Fade-in animation for boxes
+        const boxes = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.08 }
+        ); // Lower threshold for mobile
 
-    boxes.forEach(box => observer.observe(box));
-});
+        boxes.forEach((box) => observer.observe(box));
+      });
     </script>
-</body>
+  </body>
 </html>

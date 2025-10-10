@@ -19,10 +19,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    padding-left: 20px;    /* Keep ALP close to left edge */
-    padding-right: 24px;  /* Add more space on right */
+    padding: 8px 20px; /* Even more compact */
     position: relative;
 }
 .nav-wrapper{
@@ -30,12 +27,22 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    height: auto;
     flex: 0 0 auto;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #00b4d8;
+    filter: brightness(0) saturate(100%) invert(21%) sepia(81%) saturate(1322%) hue-rotate(153deg) brightness(97%) contrast(101%);
+    /* This filter tints black logos to match #00b4d8 theme color */
 }
+
+.logo img {
+    height: 60px; /* Slightly smaller logo */
+    width: auto;
+    margin-right: 0;
+    cursor: pointer;
+    display: block;
+}
+
 
 .nav-wrapper {
     flex: 1 1 auto;
@@ -212,11 +219,14 @@ body {
     .header-content {
         flex-direction: row;
         gap: 0;
-        padding: 18px 8px;
+        padding: 8px 8px; /* Reduced from 18px to 8px for compact mobile header */
         position: relative;
     }
     .logo {
         margin-left: 8px;
+    }
+    .logo img {
+        height: 50px; /* Slightly smaller logo on mobile */
     }
     nav {
         flex: 1;
@@ -265,3 +275,22 @@ body {
     }
 }
 
+.download-btn {
+    background: linear-gradient(90deg, #008081 60%, #00b4d8 100%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.08rem;
+    border: none;
+    border-radius: 32px;
+    padding: 14px 32px;
+    margin: 12px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    outline: none;
+    display: inline-block;
+}
+.download-btn:hover, .download-btn:focus {
+    background: linear-gradient(90deg, #00b4d8 60%, #008081 100%);
+    transform: translateY(-2px) scale(1.04);
+}

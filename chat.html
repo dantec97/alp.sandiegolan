@@ -1,98 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>Chat | Automated LAN Party</title>
-    <link rel="stylesheet" href="./styles/pages.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/pages.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="header-content">
-            <div class="logo">ALP</div>
-            <nav class="nav-wrapper">
-                <div class="nav-links" id="navLinks">
-                    <a href="index.html">Home</a>
-                    <a href="calendar.html">Calendar</a>
-                    <a href="tournaments.html">Tournaments</a>
-                    <a href="chat.html">Chat</a>
-                    <a href="downloads.html" target="_blank">Downloads</a>
-                    <a href="https://www.patreon.com/posts/get-automated-140772763" target="_blank">GET ALP</a>
-                    <div class="dropdown">
-                        <span class="dropbtn">Servers &#x25BC;</span>
-                        <div class="dropdown-content">
-                            <a href="servers.html">Virtual Machines</a>
-                            <a href="non_steam_servers.html">Non-Steam Servers</a>
-                            <a href="steam_servers.html">Steam Servers</a>
-                            <a href="server_browser.html">Server Browser</a>
-                        </div>
-                    </div>
-                </div>
-                <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
-                    <span></span><span></span><span></span>
-                </button>
-            </nav>
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/ALP_logo_txt.png" alt="ALP Logo" />
+          </a>
         </div>
+        <nav class="nav-wrapper">
+          <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="tournaments.html">Tournaments</a>
+            <a href="chat.html">Chat</a>
+            <a href="downloads.html" target="_blank">Downloads</a>
+            <a
+              href="https://www.patreon.com/posts/get-automated-140772763"
+              target="_blank"
+              >GET ALP</a
+            >
+            <div class="dropdown">
+              <span class="dropbtn">Servers &#x25BC;</span>
+              <div class="dropdown-content">
+                <a href="servers.html">Virtual Machines</a>
+                <a href="non_steam_servers.html">Non-Steam Servers</a>
+                <a href="steam_servers.html">Steam Servers</a>
+                <a href="server_browser.html">Server Browser</a>
+              </div>
+            </div>
+          </div>
+          <button
+            class="hamburger"
+            id="hamburgerBtn"
+            aria-label="Open navigation"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+      </div>
     </header>
     <div class="main-container">
-        <div class="box fade-in">
-            <h1>Chat</h1>
-            <p>
-                The chat page within ALP contains a self-creating link for teamspeak, but also a discord link for you to change:
-            </p>
-            <h4>Discord link:</h4>
-            <p>
-                Edit this shortcode to customize the discord link on the admin portion of the intranet site:<br>
-                Code snippit > All snippits > Discord clickable image<br>
-                Replace the https://discord.gg/ URL with your own invite URL and hit update on the top right.
-            </p>
-            <h4>Forum</h4>
-            <p>
-                The bottom of the Chat page is a web-forum that people at the LAN can use to discuss games, hardware, or sign up for raffle prizes.
-            </p>
-            <iframe src="https://www.youtube.com/embed/BmtFh-pb7F8?si=ZSVyrtBASwKZw8Gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+      <div class="box fade-in">
+        <h1>Chat</h1>
+        <p>
+          The chat page within ALP contains a self-creating link for
+          teamspeak, but also a discord link for you to change:
+        </p>
+        <h4>Discord link:</h4>
+        <p>
+          Edit this shortcode to customize the discord link on the
+          admin portion of the intranet site:<br />
+          Code snippit > All snippits > Discord clickable image<br />
+          Replace the https://discord.gg/ URL with your own invite URL
+          and hit update on the top right.
+        </p>
+        <h4>Forum</h4>
+        <p>
+          The bottom of the Chat page is a web-forum that people at
+          the LAN can use to discuss games, hardware, or sign up for
+          raffle prizes.
+        </p>
+        <iframe
+          src="https://www.youtube.com/embed/BmtFh-pb7F8?si=ZSVyrtBASwKZw8Gg"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu toggle
-    const hamburger = document.getElementById('hamburgerBtn');
-    const navLinks = document.getElementById('navLinks');
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
-        });
-    }
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hamburger menu toggle
+        const hamburger = document.getElementById("hamburgerBtn");
+        const navLinks = document.getElementById("navLinks");
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", function () {
+            navLinks.classList.toggle("open");
+          });
+        }
 
-    // Dropdown menu toggle for mobile/touch
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    if (dropbtn && dropdownContent) {
-        dropbtn.addEventListener('click', function(e) {
+        // Dropdown menu toggle for mobile/touch
+        const dropbtn = document.querySelector(".dropbtn");
+        const dropdownContent = document.querySelector(
+          ".dropdown-content"
+        );
+        if (dropbtn && dropdownContent) {
+          dropbtn.addEventListener("click", function (e) {
             e.preventDefault();
-            dropdownContent.style.display = 
-                dropdownContent.style.display === 'block' ? 'none' : 'block';
-        });
-        // Optional: close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!dropbtn.contains(e.target) && !dropdownContent.contains(e.target)) {
-                dropdownContent.style.display = 'none';
+            dropdownContent.style.display =
+              dropdownContent.style.display === "block"
+                ? "none"
+                : "block";
+          });
+          // Optional: close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (
+              !dropbtn.contains(e.target) &&
+              !dropdownContent.contains(e.target)
+            ) {
+              dropdownContent.style.display = "none";
             }
-        });
-    }
+          });
+        }
 
-    // Fade-in animation for boxes
-    const boxes = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.08 }); // Lower threshold for mobile
+        // Fade-in animation for boxes
+        const boxes = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.08 }
+        ); // Lower threshold for mobile
 
-    boxes.forEach(box => observer.observe(box));
-});
+        boxes.forEach((box) => observer.observe(box));
+      });
     </script>
-</body>
+  </body>
 </html>
