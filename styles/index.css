@@ -73,7 +73,14 @@ body {
     cursor: pointer;
     transition: background 0.2s;
 }
+.page-fade-in {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(.77,0,.18,1);
+}
 
+.page-fade-in.visible {
+    opacity: 1;
+}
 .nav-links a:hover, .dropbtn:hover {
     background: #00b4d8;
     color: #062E3E;
@@ -265,6 +272,7 @@ body {
         margin: 0 0 18px 0;
         padding: 1rem;
     }
+
 
     .header-content {
         flex-direction: row;

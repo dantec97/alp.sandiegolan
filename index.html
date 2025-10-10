@@ -39,32 +39,34 @@
             </nav>
         </div>
     </header>
-    <section class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
-            <source src="videos/hero_vid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <h1>Automated LAN Party</h1>
-        <p>Your one-stop virtualized server for legacy LAN game hosting.<br>
-        Host, manage, and play with ease—no technical headaches.</p>
-        <a href="https://www.patreon.com/posts/get-automated-140772763" target="_blank"><button class="cta-btn">GET ALP</button></a>
-    </section>
-    <div class="main-container">
-        <div class="box fade-in">
-            <h2>What is Automated LAN Party?</h2>
-            <p>
-                ALP bundles all the games and files needed for clients in one package. Build your VM, use our .VHDX drive, and hit start.<br>
-                The built-in tournament, calendar, and download pages take a load off LAN party admins. Attendees browse the intranet page for all their information.
-            </p>
-            <img src="images/server_list.png" alt="Server List" class="expandable-img" id="serverListImg">
-        </div>
-        <div class="box fade-in">
-            <h2>What ALP is not!</h2>
-            <p>
-                ALP is not intended for online service or server use. While you can port-forward for game servers, multiple places running the same software may cause conflicts in game browsers.<br>
-                ALP is not a web-forum or registration site prior to LANs and does not have a seating chart.
-            </p>
-            <iframe width="100%" height="220" src="https://www.youtube.com/embed/r5QBKpWgvbk?si=b_URhT-4GkfZ97Mb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="page-fade-in">
+        <section class="hero">
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="videos/hero_vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h1>Automated LAN Party</h1>
+            <p>Your one-stop virtualized server for legacy LAN game hosting.<br>
+            Host, manage, and play with ease—no technical headaches.</p>
+            <a href="https://www.patreon.com/posts/get-automated-140772763" target="_blank"><button class="cta-btn">GET ALP</button></a>
+        </section>
+        <div class="main-container">
+            <div class="box fade-in">
+                <h2>What is Automated LAN Party?</h2>
+                <p>
+                    ALP bundles all the games and files needed for clients in one package. Build your VM, use our .VHDX drive, and hit start.<br>
+                    The built-in tournament, calendar, and download pages take a load off LAN party admins. Attendees browse the intranet page for all their information.
+                </p>
+                <img src="images/server_list.png" alt="Server List" class="expandable-img" id="serverListImg">
+            </div>
+            <div class="box fade-in">
+                <h2>What ALP is not!</h2>
+                <p>
+                    ALP is not intended for online service or server use. While you can port-forward for game servers, multiple places running the same software may cause conflicts in game browsers.<br>
+                    ALP is not a web-forum or registration site prior to LANs and does not have a seating chart.
+                </p>
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/r5QBKpWgvbk?si=b_URhT-4GkfZ97Mb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
@@ -145,6 +147,13 @@
                     dropdownContent.style.display = 'none';
                 }
             });
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeEl = document.querySelector('.page-fade-in');
+        if (fadeEl) {
+            setTimeout(() => fadeEl.classList.add('visible'), 100);
         }
     });
     </script>
