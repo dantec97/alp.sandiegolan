@@ -1,0 +1,314 @@
+/* --- Base Styles --- */
+body {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: linear-gradient(120deg, #062E3E 60%, #008081 100%);
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Header --- */
+.header {
+    background: #062E3E;
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+/* --- Header Content --- */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 20px;    /* Keep ALP close to left edge */
+    padding-right: 24px;   /* Add more space on right */
+    position: relative;
+}
+
+.nav-wrapper {
+    padding: 10px 100px 10px 10px;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo {
+    flex: 0 0 auto;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #00b4d8;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a, .dropbtn {
+    color: #fff;
+    background: transparent;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.nav-links a:hover, .dropbtn:hover {
+    background: #00b4d8;
+    color: #062E3E;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    min-width: 180px;
+    z-index: 10;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: #062E3E;
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.dropdown-content a:hover {
+    background: #e0f7fa;
+    color: #00b4d8;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- Main Container & Card --- */
+.main-container {
+    max-width: 900px;
+    margin: 48px auto 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    box-shadow: none;
+}
+
+.box {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    width: min(90vw, 1150px);    
+    padding: clamp(24px, 5vw, 48px);
+    margin-bottom: 32px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+    .box {
+        padding: 1vw; /* padding fix for mid sized monitor */
+    }
+}
+
+.box:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+    transform: translateY(-2px) scale(1.01);
+}
+
+.box h1 {
+    color: #008081;
+    font-size: 2.4rem;
+    margin-top: 0;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.box h2 {
+    color: #008081;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.box h3 {
+    color: #008081;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.box p, .box ol, .box li {
+    color: #333;
+    font-size: 1.18rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.box ol {
+    padding-left: 20px;
+}
+
+.box li {
+    margin-bottom: 12px;
+}
+
+.box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 18px auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: block;
+}
+
+.box iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.img-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.img-row img {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* --- Fade-in Animation for Card --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Hamburger styles --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- Mobile nav --- */
+@media (max-width: 900px) {
+    .header-content {
+        flex-direction: row;
+        gap: 0;
+        padding: 18px 8px;
+        position: relative;
+    }
+    .logo {
+        margin-left: 8px;
+    }
+    nav {
+        flex: 1;
+        position: relative;
+    }
+    .nav-links {
+        position: fixed;
+        top: 0; right: 0;
+        height: 100vh;
+        width: 220px;
+        background: #062E3E;
+        flex-direction: column;
+        gap: 0;
+        padding-top: 80px;
+        transform: translateX(100%);
+        transition: transform 0.3s;
+        box-shadow: -2px 0 16px rgba(0,0,0,0.12);
+        z-index: 1001;
+    }
+    .nav-links.open {
+        transform: translateX(0);
+    }
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100;
+    }
+    .main-container, .box {
+        max-width: 100%;
+        padding: 0 8px;
+        border-radius: 0;
+    }
+    .box {
+        padding: 24px 8px;
+        border-radius: 12px;
+    }
+    .box h1 {
+        font-size: 1.5rem;
+    }
+    .box h2 {
+        font-size: 1.3rem;
+    }
+    .box iframe {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+    .img-row {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+}

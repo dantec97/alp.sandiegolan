@@ -1,93 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VM LAN-Server | Automated LAN Party</title>
+    <link rel="stylesheet" href="./styles/servers.css">
 </head>
 <body>
-    <!-- Top Strip -->
-    <div class="top-strip"></div>
-
-    <table>
-        <tbody>
-            <!-- First Row with Background Image -->
-            <tr class="first-row">
-                <td colspan="6">Automated LAN-Party</td>
-            </tr>
-            <!-- Second Row with Links -->
-            <tr class="second-row">
-                <td colspan="6">
-                    <a href="index.html">HOME</a> |
-                    <a href="calendar.html">CALENDAR</a> |
-                    <a href="tournaments.html">TOURNAMENTS & CHALLENGES</a> |
-                    <a href="chat.html">CHAT</a> |
-                    <a href="downloads.php">DOWNLOADS</a> |
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">ALP</div>
+            <nav class="nav-wrapper">
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="calendar.html">Calendar</a>
+                    <a href="tournaments.html">Tournaments</a>
+                    <a href="chat.html">Chat</a>
+                    <a href="downloads.html">Downloads</a>
+                    <a href="https://www.patreon.com/posts/get-automated-140772763" target="_blank">GET ALP</a>
                     <div class="dropdown">
-                        <span class="dropbtn">SERVERS &#x25BC;</span>
+                        <span class="dropbtn">Servers &#x25BC;</span>
                         <div class="dropdown-content">
-                            <a href="servers.html">VIRTUAL MACHINES</a>
-                            <a href="non_steam_servers.html">NON-STEAM SERVERS</a>
-                            <a href="steam_servers.html">STEAM SERVERS</a>
-                            <a href="server_browser.html">SERVER BROWSER</a>
+                            <a href="servers.html">Virtual Machines</a>
+                            <a href="non_steam_servers.html">Non-Steam Servers</a>
+                            <a href="steam_servers.html">Steam Servers</a>
+                            <a href="server_browser.html">Server Browser</a>
                         </div>
                     </div>
-                </td>
-            </tr>
-            <tr class="content-row">
-                <td colspan="6"><br><table border="0"><tbody><tr><td width="*"> </td><td width="1000" style="text-align: left;">
-            <!-- Third Row for Content -->	
- 
-<table style="width: 100%;">
-    <tr>
-        <td><h1>VM LAN-Server</h1>
-		Below is how to build the Hyer-V VM using the LAN-Server.vhdx.<br>For specific servers once you're booted into the LAN-Server see:<br>
-<a href="non_steam_servers.html">Non-Steam Servers</a> or <a href="steam_servers.html">Steam based Servers</a></center><br><br>
-            The VM Server was created in Windows Hyper-V as a gen-1 server. The virtual server should have as many cores and RAM as you can throw at it. Originally, this was built on 4 cores and 12GB of RAM; however, this quickly expanded, and now it is running on a 24-core, 64GB VM. If you wish to run the Steam servers as well, such as Satisfactory, you will need at least 20GB of RAM allocated to the virtual machine. If you have all the servers running, it will consume 30GB of RAM at idle.
-            <br><br>
-            In order to create the VM in Hyper-V, make sure you have virtualization enabled in your BIOS and Hyper-V installed via the Windows features panel within Windows. Make sure you have some kind of connection enabled into the Hyper-V switch manager to allow the server to have a network. We'll call ours LAN.
-            <br><br>
-            Once done and inside Hyper-V Manager, you can create a new Hyper-V instance:
-            <br><br>
-            New > Virtual Machine
-            <br>Name: LAN-Server
-            <br>Store: Wherever you like
-            <br>Generation: 1
-            <br>Startup Memory: As much as you can spare. Dynamic memory not suggested.
-            <br>Connection: LAN connection
-            <br>Use an existing Virtual Disk: LAN-Server.vhdx
-            <br>Finish!
-            <br><br>
-            During the first boot, it may ask to merge with the last instance. Simply hit "continue."
-			<br><br>
-			If you see this error about checkpoints, disable checkpoints at least for the first boot.<br>
-			<img src="images/checkpoints.PNG"><br>
-			See the settings we use on the far right photo: <font size="50"><blink>&#8594</blink></font>
-            <br><br>
-            Allow the server to boot up for at least 20 minutes; it could take longer if on slower hardware. Once done, you can log into the server using either Hyper-V > Connect or using Remote Desktop:
-            <br>LAN-Server:1337
-            <br><br>
-            Username and password can be found within the readme in the <a href="downloads.php">.7z download</a>
-            <br><br>
-            Note: Do not change this information as the server launches batch scripts after logging in to launch all the game and web servers. Changing the Windows password will nuke the auto-login.
-            <br><br>
-            Individual servers or the entire batch can be launched or edited from the servers folder on the desktop. Server status can be obtained by anyone on the LAN by browsing to http://LAN-Server on the network.
-        </td>
-		<br>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/MTSTYRggNwU?si=gVejE8NOAsH9Qfy_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <td width="250">
-			<img src="images/task_manager.PNG" width="245"><br>
-			<br>
-			<img src="images/windows_features.PNG" width="245"><br>
-			<br>
-            <img src="images/VM_Settings.PNG" width="245" height="650">
-        </td>
-    </tr>
-</table>
+                </div>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="box fade-in">
+            <h1>VM LAN-Server Setup</h1>
+            <p>
+                Below is how to build the Hyper-V VM using the <strong>LAN-Server.vhdx</strong>.<br>
+                For specific servers once you're booted into the LAN-Server see:
+                <a href="non_steam_servers.html">Non-Steam Servers</a> or <a href="steam_servers.html">Steam based Servers</a>
+            </p>
+        </div>
+        <div class="box fade-in">
+            <h2>Requirements & Resources</h2>
+            <p>
+                The VM Server was created in Windows Hyper-V as a gen-1 server. The virtual server should have as many cores and RAM as you can throw at it. Originally, this was built on 4 cores and 12GB of RAM; however, this quickly expanded, and now it is running on a 24-core, 64GB VM. If you wish to run the Steam servers as well, such as Satisfactory, you will need at least 20GB of RAM allocated to the virtual machine. If you have all the servers running, it will consume 30GB of RAM at idle.
+            </p>
+            <div class="img-row">
+                <img src="images/task_manager.PNG" alt="Task Manager" />
+                <img src="images/windows_features.PNG" alt="Windows Features" />
+            </div>
+        </div>
+        <div class="box fade-in">
+            <h2>Preparation</h2>
+            <p>
+                In order to create the VM in Hyper-V, make sure you have virtualization enabled in your BIOS and Hyper-V installed via the Windows features panel within Windows. Make sure you have some kind of connection enabled in the Hyper-V switch manager to allow the server to have a network. We'll call ours <strong>LAN</strong>.
+            </p>
+        </div>
+        <div class="box fade-in">
+            <h2>VM Creation Steps</h2>
+            <ol>
+                <li>New &gt; Virtual Machine</li>
+                <li>Name: LAN-Server</li>
+                <li>Store: Wherever you like</li>
+                <li>Generation: 1</li>
+                <li>Startup Memory: As much as you can spare. Dynamic memory not suggested.</li>
+                <li>Connection: LAN connection</li>
+                <li>Use an existing Virtual Disk: LAN-Server.vhdx</li>
+                <li>Finish!</li>
+            </ol>
+            <img src="images/VM_Settings.PNG" alt="VM Settings" style="max-width: 100%; height: auto;" />
+        </div>
+        <div class="box fade-in">
+            <h2>First Boot & Troubleshooting</h2>
+            <p>
+                During the first boot, it may ask to merge with the last instance. Simply hit "continue."<br>
+                If you see this error about checkpoints, disable checkpoints at least for the first boot.
+            </p>
+            <img src="images/checkpoints.PNG" alt="Checkpoints Error" />
+            <p>
+                <strong>See the settings we use on the far right photo above.</strong>
+            </p>
+        </div>
+        <div class="box fade-in">
+            <h2>Login Information</h2>
+            <p>
+                Allow the server to boot up for at least 20 minutes; it could take longer if on slower hardware. Once done, you can log into the server using either Hyper-V &gt; Connect or using Remote Desktop:<br>
+                <strong>LAN-Server:1337</strong>
+            </p>
+            <p>
+                Username and password can be found within the readme in the <strong>.7z download</strong>.<br>
+                <strong>Note:</strong> Do not change this information as the server launches batch scripts after logging in to launch all the game and web servers. Changing the Windows password will nuke the auto-login.
+            </p>
+        </div>
+        <div class="box fade-in">
+            <h2>Managing Servers</h2>
+            <p>
+                Individual servers or the entire batch can be launched or edited from the servers folder on the desktop. Server status can be obtained by anyone on the LAN by browsing to <strong>http://LAN-Server</strong> on the network.
+            </p>
+        </div>
+        <div class="box fade-in">
+            <h2>Video Guide</h2>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/MTSTYRggNwU?si=gVejE8NOAsH9Qfy_" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('open');
+        });
+    }
 
-				</td><td width="*"> </td></tr></tbody></table><br></td>
-            </tr>
-        </tbody>
-    </table>
+    // Dropdown menu toggle for mobile/touch
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    if (dropbtn && dropdownContent) {
+        dropbtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownContent.style.display = 
+                dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+        // Optional: close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropbtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+                dropdownContent.style.display = 'none';
+            }
+        });
+    }
 
-	    <div class="top-strip"></div>
+    // Fade-in animation for boxes
+    const boxes = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    boxes.forEach(box => observer.observe(box));
+});
+    </script>
 </body>
 </html>

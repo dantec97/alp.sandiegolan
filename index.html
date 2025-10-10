@@ -108,20 +108,39 @@
         boxes.forEach(box => observer.observe(box));
     });
 
-    // Hamburger menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.getElementById('hamburgerBtn');
-        const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
-        });
-    });
-
     document.addEventListener('DOMContentLoaded', function() {
         const heroVideo = document.querySelector('.hero-video');
         if (heroVideo) {
             heroVideo.muted = true;
             heroVideo.play();
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+            });
+        }
+
+        // Dropdown menu toggle for mobile/touch
+        const dropbtn = document.querySelector('.dropbtn');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        if (dropbtn && dropdownContent) {
+            dropbtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdownContent.style.display = 
+                    dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+            // Optional: close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!dropbtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+                    dropdownContent.style.display = 'none';
+                }
+            });
         }
     });
     </script>
