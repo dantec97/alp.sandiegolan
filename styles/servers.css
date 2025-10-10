@@ -249,8 +249,22 @@ body {
     align-items: center;
     height: auto;
     flex: 0 0 auto;
+    margin-bottom: 10px;
+    scale: 130%;
     filter: brightness(0) saturate(100%) invert(21%) sepia(81%) saturate(1322%) hue-rotate(153deg) brightness(97%) contrast(101%);
     /* This filter tints black logos to match #00b4d8 theme color */
+}
+.dropbtn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 8px 12px; /* Match nav-links a */
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 4px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
 .logo img {
